@@ -1,0 +1,128 @@
+title = "Character Sheet, Bort"
+
+[bio]
+player = "D. Reichley"
+name = "Bort"
+class = "Cleric"
+level = 1
+alignment = "Lawful"
+age = 22
+sex = "M"
+current-xp = 26
+next-level = 1700
+
+[ability_scores]
+cha = 12
+con = 9
+dex = 7
+int = 10 
+str = 12
+wis = 18
+
+[saving_throws]
+paralyze = 14
+poison = 11
+breath = 16
+device = 12
+magic = 15
+
+[skills]
+architecture = 1
+bushcraft = 1
+climbing = 1
+languages = 1
+open-doors = 1
+search = 1
+sleight-of-hand = 1
+sneak-attack = 1
+stealth = 1
+tinkering = 1
+
+[spells]
+spell = {name = "", prepared = true }
+
+[prayers]
+prayer = { name = "Command", prepared = true }
+
+[combat]
+surprise = 4
+
+[combat.attack-bonus]
+base = 1
+melee = 1
+ranged = 0
+
+[combat.combat-options]
+standard = true # AB + 0, ac + 0
+parry = true # AC + 2, AC + 4
+press = false # AB + 2, AC + 4
+defensive = false # AB - 4, AC + 2
+
+[combat.armor-class]
+melee = 13
+ranged = 13
+without-shield = 13
+surprised = 12
+
+[combat.hp]
+max = 5
+current = 5
+
+[[equipment]]
+
+[[equipment.weapon]]
+name = "Quarterstaff"
+ab = 0
+damage = "1d4"
+range = "M"
+encumbrance = 1
+
+[[equipment.item]]
+name = "Rations"
+quantity = 5
+encumbrance = 1
+
+[[equipment.item]]
+name = "First aid kit"
+quantity = 1
+encumbrance = 1
+
+[[equipment.item]]
+name = "Pry tool"
+quantity = 1
+encumbrance = 1
+
+[[equipment.item]]
+name = "Torches"
+quantity = 1
+encumbrance = 1
+
+[[equipment.item]]
+name = "Salts"
+quantity = 1
+encumbrance = 1
+
+[[equipment.item]]
+name = "Rope, 50ft."
+quantity = 1
+encumbrance = 1
+
+[[equipment.armor]]
+name = "Leather"
+ac = 14
+encumbrance = 1
+
+[[equipment.pack]]
+name = "Backpack"
+quantity = 1
+encumbrance = 1
+
+[[equipment.item]]
+name = "Cloak"
+quantity = 1
+encumbrance = 1
+
+[[equipment.item]]
+name = "Holy symbol"
+quantity = 1
+encumbrance = 0
