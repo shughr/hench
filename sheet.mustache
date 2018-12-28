@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{bio.name}} the {{bio.role}}</title>
+  <link rel="stylesheet" href="/css/hench.css" type='text/css'>
+</head>
+
+<body>
+  {{#bio}}
+  <h1>{{name}} the {{role}}</h1>
+  {{/bio}}
+
+  <ul class='abs'>
+    {{#abilities}}
+    <li class="abs">{{#str}}
+      STR: {{score}} ({{bonus}})
+      {{/str}}</li>
+    <li class="abs">{{#dex}}
+      DEX: {{score}} ({{bonus}})
+      {{/dex}}</li>
+    <li class="abs">{{#con}}
+      CON: {{score}} ({{bonus}})
+      {{/con}}</li>
+    <li class="abs">{{#int}}
+      INT: {{score}} ({{bonus}})
+      {{/int}}</li>
+    <li class="abs">{{#wis}}
+      WIS: {{score}} ({{bonus}})
+      {{/wis}}</li>
+    <li class="abs">{{#cha}}
+      CHA: {{score}} ({{bonus}})
+      {{/cha}}</li>
+    {{/abilities}}
+  </ul>
+
+
+</body>
+
+</html>

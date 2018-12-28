@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One|Share+Tech+Mono');
+
+html {
+  background-color: #313131
+}
+
+body {
+  margin: auto;
+  max-width: 25%;
+  background-color: #313131;
+  color: #dedede;
+  font-kerning: normal;
+  font-family: 'Share Tech Mono', serif;
+}
+
+h1 {
+  font-family: 'Sigmar One', cursive;
+  font-size: 32px;
+}

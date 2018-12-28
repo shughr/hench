@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=100%, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Henchman</title>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Vollkorn" rel="stylesheet"> 
+  <link rel="stylesheet" href="./hench.css">
+</head>
+<body>
+  <form action="/spellbook" method="get">
+  <fieldset>
+    <legend>Spellbook</legend>
+    <input type="search" name="spell" id="Spell">
+    <select name="book">
+      <option value="cleric">Cleric Prayers</option>
+      <option value="magic-user">Magic-User spells</option>
+      <option value="all">All</option>
+    </select>
+    <input type="submit">
+  </fieldset>
+  </form>
+  <form action="/character/new">
+    <fieldset>
+      <legend>Characters</legend>
+      <input type="text" name="name" id="Name">
+      <select name="role" id="Role">
+        <option value="fighter">Fighter</option>
+        <option value="specialist">Specialist</option>
+        <option value="magic-user">Magic-User</option>
+        <option value="cleric">Cleric</option>
+      </select>
+      <input type="submit">
+    </fieldset>
+  </form>
+  <form action="/character/new">
+    <fieldset>
+      <legend>Characters</legend>
+      <input type="text" name="name" id="Name">
+      <select name="role" id="Role">
+        <option value="fighter">Fighter</option>
+        <option value="specialist">Specialist</option>
+        <option value="magic-user">Magic-User</option>
+        <option value="cleric">Cleric</option>
+      </select>
+      <input type="submit">
+    </fieldset>
+  </form>
+</body>
+</html>

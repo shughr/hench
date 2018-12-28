@@ -1,0 +1,6 @@
+title = "Bless"
+type = "Cleric"
+level = 1
+duration = "Instantaneous"
+range = "Touch"
+description = "This spell bestows the favor of the Cleric's deity upon the subject. That usbject receives a number of points (1d6 + caster's level) to add to any future die rolls except damage rolls. Any number of points may be spent on any roll, but the number of points used must be declared before the roll is made.  All unused points are lost at dawn the following day.\nNo rolls relating to damage or anything concerning the use of magic can be modified by this spell. Elves and other intrinsically magical creatures cannot benefit from this spell."

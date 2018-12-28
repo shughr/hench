@@ -1,5 +1,11 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem "tomlrb"
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
 gem "mustache"
-gem "solargraph"
+gem "rack"
+gem "puma"
+gem "toml-rb"
+gem "hashify", "~> 0.0.3"
