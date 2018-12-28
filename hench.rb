@@ -29,9 +29,6 @@ class Hench
     when '/character/list'
       list = Saves.new
       ['200', { 'Content-Type' => 'text/html' }, [list.render]]
-    when '/character/save'
-      
-
     else
       ['404', { 'Content-Type' => 'text/html' }, ['404 Not Found']]
     end

@@ -16,27 +16,28 @@
 
   <ul class='abs'>
     {{#abilities}}
-    <li class="abs">{{#str}}
-      STR: {{score}} ({{bonus}})
-      {{/str}}</li>
-    <li class="abs">{{#dex}}
-      DEX: {{score}} ({{bonus}})
-      {{/dex}}</li>
-    <li class="abs">{{#con}}
-      CON: {{score}} ({{bonus}})
-      {{/con}}</li>
-    <li class="abs">{{#int}}
-      INT: {{score}} ({{bonus}})
-      {{/int}}</li>
-    <li class="abs">{{#wis}}
-      WIS: {{score}} ({{bonus}})
-      {{/wis}}</li>
-    <li class="abs">{{#cha}}
-      CHA: {{score}} ({{bonus}})
-      {{/cha}}</li>
+    <li class="abs">{{#str}}STR: {{score}} ({{bonus}}){{/str}}</li>
+    <li class="abs">{{#dex}}DEX: {{score}} ({{bonus}}){{/dex}}</li>
+    <li class="abs">{{#con}}CON: {{score}} ({{bonus}}){{/con}}</li>
+    <li class="abs">{{#int}}INT: {{score}} ({{bonus}}){{/int}}</li>
+    <li class="abs">{{#wis}}WIS: {{score}} ({{bonus}}){{/wis}}</li>
+    <li class="abs">{{#cha}}CHA: {{score}} ({{bonus}}){{/cha}}</li>
     {{/abilities}}
   </ul>
 
+<ul class="skl">
+  {{#skills}}
+  <li class="skl">Architecture: {{architecture}}</li>
+  <li class="skl">Bushcraft: {{bushcraft}}</li>
+  <li class="skl">Climb: {{climb}}</li>
+  <li class="skl">Languages: {{languages}}</li>
+  <li class="skl">Search: {{search}}</li>
+  <li class="skl">Sleight of Hand: {{sleight_of_hand}}</li>
+  <li class="skl">Sneak Attack: {{sneak_attack}}</li>
+  <li class="skl">Stealth: {{stealth}}</li>
+  <li class="skl">Tinker: {{tinker}}</li>
+  {{/skills}}
+</ul>
 
 </body>
 

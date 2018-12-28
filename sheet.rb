@@ -12,4 +12,8 @@ class Sheet < Mustache
   def abilities
     @character.abs
   end
+
+  def skills
+    @character.skl
+  end
 end
