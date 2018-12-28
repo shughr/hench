@@ -6,7 +6,7 @@ BONUS = {
 }.freeze
 
 ROLES = [
-  'Fighter', 'Magic-User', 'Specialist', 'Cleric'
+  'Fighter', 'Magic-user', 'Specialist', 'Cleric'
 ].freeze
 
 SKILLS = %i[
@@ -17,7 +17,7 @@ SKILLS = %i[
 
 # Class construct for playable characters, including bio, ability, and skills
 class Character
-  attr_accessor :bio, :abs, :skl
+  attr_accessor :bio, :abs, :skl, :mag
   def initialize(name = '', role = '')
     instance_variable_set(:@bio,
                           name: name, role: role.capitalize, level: 1)
@@ -38,13 +38,19 @@ class Character
                           sneak_attack:     1,
                           stealth:          1,
                           tinker:           1)
-    unless @bio[:role] != 'Specialist'
+    instance_variable_set(:@mag, [])
+    case @bio[:role] 
+    when 'Specialist'
       4.times do
         skill = SKILLS[Dice.roll(1, 9)]
         @skl[skill] += 1
       end
+    when 'Magic-user'
+      spells = []
+      @mag.push(spells)
     end
   end
+
 
   def save
     save = {}
