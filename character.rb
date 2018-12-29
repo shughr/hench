@@ -2,7 +2,13 @@ require 'mustache'
 require 'toml-rb'
 
 BONUS = {
-  3 => -3, 4..5 => -2, 6..8 => -1, 9..12 => 0, 13..15 => 1, 16..17 => 2, 18 => 3
+  0..3 => -3,
+  4..5 => -2,
+  6..8 => -1,
+  9..12 => 0,
+  13..15 => 1,
+  16..17 => 2,
+  18..-1 => 3
 }.freeze
 
 ROLES = [
@@ -19,8 +25,22 @@ SKILLS = %i[
 class Character
   attr_accessor :bio, :abs, :skl, :mag
   def initialize(name = '', role = '')
+    newBio(name, role)
+    newAbilities
+    newSkills
+    return unless @bio[:role] == 'Magic-user'
+
+    new_magic
+  end
+
+  def new_bio(name, role)
     instance_variable_set(:@bio,
-                          name: name, role: role.capitalize, level: 1)
+                          name: name,
+                          role: role.capitalize,
+                          level: 1)
+  end
+
+  def new_abilities
     instance_variable_set(:@abs,
                           str: Ability.new.abs,
                           dex: Ability.new.abs,
@@ -28,29 +48,30 @@ class Character
                           int: Ability.new.abs,
                           wis: Ability.new.abs,
                           cha: Ability.new.abs)
-    instance_variable_set(:@skl,
-                          architecture:     1,
-                          bushcraft:        1,
-                          climb:            1,
-                          languages:        1,
-                          search:           1,
-                          sleight_of_hand:  1,
-                          sneak_attack:     1,
-                          stealth:          1,
-                          tinker:           1)
-    instance_variable_set(:@mag, [])
-    case @bio[:role] 
-    when 'Specialist'
-      4.times do
-        skill = SKILLS[Dice.roll(1, 9)]
-        @skl[skill] += 1
-      end
-    when 'Magic-user'
-      spells = []
-      @mag.push(spells)
-    end
+    return unless @bio[:role] == 'Specialist'
+
+    4.times { @skl[SKILLS[Dice.roll(1, 9)]] += 1 }
   end
 
+  def new_skills
+    instance_variable_set(:@skl,
+                          architecture: 1,
+                          bushcraft: 1,
+                          climb: 1,
+                          languages: 1,
+                          search: 1,
+                          sleight_of_hand: 1,
+                          sneak_attack: 1,
+                          stealth: 1,
+                          tinker: 1)
+  end
+
+  def new_magic
+    instance_variable_set(:@mag, [])
+    spells = []
+    3.times { }
+    @mag.push(spells)
+  end
 
   def save
     save = {}
@@ -70,7 +91,7 @@ class Character
       cha.instance_variable_set(var, hash[key])
     end
     cha
-  end 
+  end
 end
 
 # Class constructor for generating random numbers according to die size
@@ -96,6 +117,6 @@ class Ability
   def initialize
     @abs = {}
     @abs[:score] = Dice.roll(3, 6)
-    @abs[:bonus] = BONUS.select { |k| k === @abs[:score] }.values.first
+    @abs[:bonus] = BONUS.select { |k| k.cover?(@abs[:score]) }.values.first
   end
 end
