@@ -2,10 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     citrus (3.0.2)
-    hashify (0.0.3)
     mustache (1.1.0)
     puma (3.12.0)
     rack (2.0.6)
+    redcarpet (3.4.0)
     toml-rb (1.1.2)
       citrus (~> 3.0, > 3.0)
 
@@ -13,10 +13,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  hashify (~> 0.0.3)
   mustache
   puma
   rack
+  redcarpet
   toml-rb
 
 BUNDLED WITH

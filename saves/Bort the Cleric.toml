@@ -1,0 +1,33 @@
+mag = []
+[abs.cha]
+bonus = -1
+score = 7
+[abs.con]
+bonus = 1
+score = 15
+[abs.dex]
+bonus = 0
+score = 9
+[abs.int]
+bonus = -1
+score = 8
+[abs.str]
+bonus = 0
+score = 9
+[abs.wis]
+bonus = 0
+score = 12
+[bio]
+level = 1
+name = "Bort"
+role = "Cleric"
+[skl]
+architecture = 1
+bushcraft = 1
+climb = 1
+languages = 1
+search = 1
+sleight_of_hand = 1
+sneak_attack = 1
+stealth = 1
+tinker = 1

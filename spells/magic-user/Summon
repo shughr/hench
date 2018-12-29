@@ -1,0 +1,11 @@
+title = "Summon"
+type = "Magic-user"
+level = 1
+duration = "See description"
+range = "10'"
+description = """Magic fundamentally works by ripping a hole in the fabric of space and time and pulling out energy that interacts with and wards our reality. Various mages have managed to consistently capture specific energy in exact amounts to produce replicable results: Spells.
+
+The *Summmon* spell opens the rift between the worlds a little bit more and forces an inhabitant **From Beyond** into our world to do the Magic-users bidding. What exactly comes through the tear, and whether or not it will do what the summoner wishes, is wholly unpredictable.
+
+[Click here to cast.](http://summon.totalpartykill.ca/)
+""" 

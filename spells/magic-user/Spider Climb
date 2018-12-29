@@ -1,0 +1,8 @@
+title = "Spider Climb"
+type = "Magic-user"
+level = 1
+duration = "1 round + 1 round/level"
+range = "Touch"
+description = """
+The subject can climb and travel on vertical surfaces or even traverse ceilings as a spider does. The affected creature must hav its hand and feet free to climb in this manner. Any objects weighing less than 5 pounds cling to the spell recipient's hands and feet. This spell can be used on another being (touch required) with no saving throw."""
+ 

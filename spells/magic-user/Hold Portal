@@ -1,0 +1,7 @@
+title = "Hold Portal"
+type = "Magic-user"
+level = 1
+duration = "2d6 turns"
+range = "10'"
+description = """
+This spell magically holds shut a door, gate, window, or shutter of wood, metal, or stone. The magic affects the portal just as if it were securely closed and normally locked. A *Knock* spell or a successful *Dispel Magic* spell can negate a *Hold Portal* spell."""

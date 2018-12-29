@@ -1,0 +1,7 @@
+title = "Shield"
+type = "Magic-user"
+level = 1
+duration = "2 Turns"
+range = "Touch"
+description = """
+Magic-users are masters of matter and as such can command objects racing towards them to stop. The objects are sometimes impertinent, it is true, but this spell will protect the caster from many attacks which would otherwise harm them. Against missile attacks, the spell grants the caster AC 19, and an effective AC 17 for all other attacks. Even if an attack hits, it does one less point of damage than it otherwise would have."""

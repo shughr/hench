@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'mustache'
 require 'toml-rb'
+require 'redcarpet'
 
 # Spell Constructor Class for Unseen Servant App
 class Spellbook < Mustache
@@ -31,6 +32,7 @@ class Spellbook < Mustache
   end
 
   def description
-    @page['description']
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown.render(@page['description'])
   end
 end
