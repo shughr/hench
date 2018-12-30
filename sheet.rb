@@ -16,4 +16,10 @@ class Sheet < Mustache
   def skills
     @character.skl
   end
+
+  def spells
+    return false unless bio[:role] == 'Magic-user'
+
+    @character.mag.map { |s| s['title'] }
+  end
 end

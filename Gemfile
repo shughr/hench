@@ -9,3 +9,5 @@ gem "rack"
 gem "puma"
 gem "toml-rb"
 gem "redcarpet"
+gem "pry"
+

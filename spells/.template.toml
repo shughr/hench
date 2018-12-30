@@ -1,6 +1,7 @@
 title = ""
 type = ""
-level = 1
+level = false
 duration = ""
 range = ""
-description = "" 
+description = """
+""" 

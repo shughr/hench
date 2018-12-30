@@ -1,5 +1,6 @@
 require 'mustache'
 require 'toml-rb'
+require_relative 'spells/magic'
 
 BONUS = {
   0..3 => -3,
@@ -11,8 +12,8 @@ BONUS = {
   18..-1 => 3
 }.freeze
 
-ROLES = [
-  'Fighter', 'Magic-user', 'Specialist', 'Cleric'
+ROLES = %w[
+  Fighter Magic-user Specialist Cleric
 ].freeze
 
 SKILLS = %i[
@@ -25,12 +26,15 @@ SKILLS = %i[
 class Character
   attr_accessor :bio, :abs, :skl, :mag
   def initialize(name = '', role = '')
-    newBio(name, role)
-    newAbilities
-    newSkills
-    return unless @bio[:role] == 'Magic-user'
-
-    new_magic
+    new_bio(name, role)
+    new_abilities
+    new_skills
+    case @bio[:role]
+    when 'Magic-user'
+      new_magic(:mu)
+    when 'Cleric'
+      new_magic(:cl)
+    end
   end
 
   def new_bio(name, role)
@@ -48,9 +52,6 @@ class Character
                           int: Ability.new.abs,
                           wis: Ability.new.abs,
                           cha: Ability.new.abs)
-    return unless @bio[:role] == 'Specialist'
-
-    4.times { @skl[SKILLS[Dice.roll(1, 9)]] += 1 }
   end
 
   def new_skills
@@ -64,13 +65,25 @@ class Character
                           sneak_attack: 1,
                           stealth: 1,
                           tinker: 1)
+    return false unless @bio[:role] == 'Specialist'
+
+    4.times { @skl[SKILLS[Dice.roll(1, 9)]] += 1 }
   end
 
-  def new_magic
+  def new_magic(type)
     instance_variable_set(:@mag, [])
-    spells = []
-    3.times { }
-    @mag.push(spells)
+    magic = Magic.new
+    case type
+    when :mu
+      3.times do
+        spell = magic.level_one[type][Dice.roll(1, 20)]
+        redo if @mag.include?(spell)
+        @mag.push(spell)
+      end
+      @mag.push(magic.spells[:mu].select { |h| h['title'] == 'Read Magic' }.pop)
+    when :cl
+      @mag = magic.spells[:cl]
+    end
   end
 
   def save

@@ -13,7 +13,9 @@ class Hench
       ['200', { 'Content-Type' => 'text/html' }, [index.render]]
     when '/spellbook'
       q = req.params
-      s = Spellbook.new("./spells/#{q['book']}/#{q['spell']}")
+      s = Spellbook.new(
+        "./spells/#{q['book']}/#{q['spell'].split('%20').join(' ')}"
+      )
       ['200', { 'Content-Type' => 'text/html' }, [s.render]]
     when '/character/new'
       q = req.params
