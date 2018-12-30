@@ -1,7 +1,7 @@
-require_relative 'spellbook'
-require_relative 'index'
-require_relative 'sheet'
-require_relative 'saves/saves'
+require_relative '../magic/spellbook/spellbook'
+require_relative '../index'
+require_relative '../sheet/sheet'
+require_relative '../saves/saves'
 
 # Top-level class for Hench App
 class Hench

@@ -1,6 +1,6 @@
 require 'mustache'
 require 'toml-rb'
-require_relative 'spells/magic'
+require_relative '../magic/magic'
 
 BONUS = {
   0..3 => -3,

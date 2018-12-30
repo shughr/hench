@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.wordWrap": "on",
+		"files.exclude": {
+			"**/.rubocop.yml": true,
+			"**/*.code-workspace": true
+		}
+	}
+}
